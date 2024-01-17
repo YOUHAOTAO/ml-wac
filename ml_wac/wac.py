@@ -1,7 +1,9 @@
+import os
 import pickle
 from typing import Union
-import os
+
 import numpy as np
+import pkg_resources
 
 from ml_wac.types.attack_type import AttackType
 from ml_wac.types.model_type import ModelType
@@ -9,12 +11,12 @@ from ml_wac.types.model_type import ModelType
 
 class WebAttackClassifier:
     def __init__(self, model_type: ModelType = ModelType.LOGISTIC_REGRESSION):
-        current = os.path.dirname(os.path.abspath(__file__))
-
-        with open(os.path.join(current, '..', 'models', model_type.value), 'rb') as f:
+        with open(pkg_resources.resource_filename('ml_wac', os.path.join('data', 'models', model_type.value)),
+                  'rb') as f:
             self.saved_model = pickle.load(f)
 
-        with open(os.path.join(current, '..', 'vectorizers', "vectorizer.sklearn"), 'rb') as f:
+        with open(pkg_resources.resource_filename('ml_wac', os.path.join('data', 'vectorizers', "vectorizer.sklearn")),
+                  'rb') as f:
             self.vectorizer = pickle.load(f)
 
     def predict_single(self, path: str, threshold: float = 0.7) -> AttackType:
