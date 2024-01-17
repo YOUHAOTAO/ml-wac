@@ -11,11 +11,11 @@ from ml_wac.types.model_type import ModelType
 
 class WebAttackClassifier:
     def __init__(self, model_type: ModelType = ModelType.LOGISTIC_REGRESSION):
-        with open(pkg_resources.resource_filename('ml_wac', os.path.join('data', 'models', model_type.value)),
+        with open(pkg_resources.resource_filename(__name__, os.path.join('data', 'models', model_type.value)),
                   'rb') as f:
             self.saved_model = pickle.load(f)
 
-        with open(pkg_resources.resource_filename('ml_wac', os.path.join('data', 'vectorizers', "vectorizer.sklearn")),
+        with open(pkg_resources.resource_filename(__name__, os.path.join('data', 'vectorizers', "vectorizer.sklearn")),
                   'rb') as f:
             self.vectorizer = pickle.load(f)
 
