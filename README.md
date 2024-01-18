@@ -20,6 +20,7 @@ A Machine Learning Web-based Attack Classifier for the purpose of detecting and 
     
     # Predict a single path. Optionally, a certainty threshold can be provided
     prediction = wac.predict_single("/test?id=<script>alert(1)</script>", threshold=0.7)
+    
     print(prediction)
 
 #### Predict multiple paths
@@ -51,5 +52,4 @@ Use [one of the other pre-trained models](https://github.com/izak0s/ml-wac/blob/
 	# Predict a single path. Optionally, a certainty threshold can be provided
 	prediction = wac.predict_single("/test?id=<script>alert(1)</script>", threshold=0.7)
 	
-
 	print(prediction)
