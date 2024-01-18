@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 
 setup(name='ml_wac',
-      version='0.7',
+      version='1.0',
       description='A Machine Learning Web-based Attack Classifier to detect and identify LFI, RFI, SQLI, '
                   'and XSS attacks using the request paths',
       long_description=open('README.md').read(),
