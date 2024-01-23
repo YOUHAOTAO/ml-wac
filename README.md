@@ -9,6 +9,16 @@ A Machine Learning Web-based Attack Classifier for the purpose of detecting and 
 
     pip install ml-wac
 
+### Performance
+Performance evaluations have been conducted on all models to determine their accuracy and inference time on the 3579-item test set.
+
+| Model Name             | Accuracy | Inference Time (ms) |
+|------------------------|----------|------------------------------|
+| XGBoost                | 98.80%   | 82.71                        |
+| Decision Tree          | 98.21%   | 1.95                         |
+| Logistic Regression    | 98.30%   | 5.58                         |
+| Support Vector Machine | 99.25%   | 19225.70                     |
+
 
 ### Examples
 #### Predict a single path
